@@ -6,8 +6,38 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        div{
+            width:96px;height:48px;border:2px solid #000;
+            margin:auto;position: absolute;
+            left:0;right:0;bottom: 0;top:0;border-bottom: 50px solid #000;border-radius: 50%;
+            transition: all 2s ease;
+        }
+        div:before{
+            content: "";width:8px;height:8px;border:20px solid #fff;
+            position: absolute;left:0;top:50%;border-radius: 50%;
+            background:#000 ;
+        }
+        div:after{
+            content: "";width:8px;height:8px;border:20px solid #000;
+            position: absolute;
+            right:0;top:50%;border-radius: 50%;
+            background:#fff;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var div=document.querySelector("div");
+            div.onmouseover=function () {
+                this.style.transform="rotate(100deg)"
+            }
+            div.onmouseout=function () {
+                this.style.transform="rotate(0deg)"
+            }
+        }
+    </script>
 </head>
 <body>
-  测试111111
+   <div></div>
 </body>
 </html>
