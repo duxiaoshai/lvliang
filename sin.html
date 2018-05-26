@@ -9,28 +9,33 @@
     <style>
         div{
             width:20px;height:20px;
-            background: red;
-            position: absolute;
-            left:90px;top:90px;
+            background: red;position: absolute;
+            left:100px;
+            top: 100px;
         }
     </style>
 
 </head>
 <body>
-     <div>
+<div>
 
-     </div>
-     <div>
+</div>
+<div>
 
-     </div>
+</div>
 <script>
-      //1个弧度  半径
-      var div=document.querySelector("div")
-
-      setInterval(function () {
-         div.style.left="200px"
-         div.style.top="200px"
-      },40)
+  var div=document.querySelector("div");
+  var startAngle=0;
+  var speed=10;
+  var x=50,y=50, r=50;
+  setInterval(function () {
+     startAngle+=speed;
+     var left=y*Math.cos(startAngle*Math.PI/180)-x*Math.sin(startAngle*Math.PI/180);
+     var top=x*Math.cos(startAngle*Math.PI/180)+y*Math.sin(startAngle*Math.PI/180)
+      div.style.left=100+left+"px";
+      div.style.top=100+top+"px";
+  },40)
 </script>
+
 </body>
 </html>
